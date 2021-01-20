@@ -49,6 +49,9 @@ window.addEventListener('load', (event) => {
   // Bind the click event of each element to a function
   document.querySelectorAll('.card').forEach((card) => {
     card.addEventListener('click', (ev) => {
+      // ▼ If the gap betweend cards is clicked return
+      if (!ev.target.classList.contains('back')) return;
+
       // ▼ Only allow action, when  memoryGame.pickedCards.length !== 2 //
       if (memoryGame.pickedCards.length === 2) return;
 
